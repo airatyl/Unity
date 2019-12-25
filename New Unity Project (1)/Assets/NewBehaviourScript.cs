@@ -172,27 +172,27 @@ public class NewBehaviourScript : MonoBehaviour
             }
             b = Random.Range(1, 5);
         }
-        if(Timer >3 && Timer<4)
+        if (Timer > 3 && Timer < 4)
         {
             if (l == 1)
             {
-                obj.GetComponent<MeshRenderer>().enabled = false;
+                obj.SetActive(false);
             }
             if (l == 2)
             {
-                obj3.GetComponent<MeshRenderer>().enabled = false;
+                obj3.SetActive(false);
             }
             if (l == 3)
             {
-                obj5.GetComponent<MeshRenderer>().enabled = false;
+                obj5.SetActive(false);
             }
             if (l == 4)
             {
-                obj7.GetComponent<MeshRenderer>().enabled = false;
+                obj7.SetActive(false);
             }
             if (l == 5)
             {
-                 obj9.GetComponent<MeshRenderer>().enabled = false;
+                obj9.SetActive(false);
             }
         }
     }

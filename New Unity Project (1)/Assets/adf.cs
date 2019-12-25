@@ -10,21 +10,25 @@ public class adf : MonoBehaviour
     public GameObject obj1;
     public GameObject start;
     public NewBehaviourScript a;
+    public ProgressBar Pb;
+    int l;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Pb.BarValue = 100;
     }
     void OnMouseDown()
     {
-        if (obj1.GetComponent<MeshRenderer>().enabled == false)
+        if (obj1.active == false)
         {
             start.GetComponent<MeshRenderer>().enabled = true;
-            obj1.GetComponent<MeshRenderer>().enabled = true;
+            obj1.SetActive(true);
             a.c += 1;
             obj2.GetComponent<TextMeshPro>().text = a.c.ToString();
+            l = Random.Range(1, 5);
+            Pb.BarValue = Pb.BarValue - 10 * l;
         }
     }
     // Update is called once per frame
@@ -48,12 +52,14 @@ public class adf : MonoBehaviour
                 {
                     if (hit.transform == gameObject.transform)
                     {
-                        if (obj1.GetComponent<MeshRenderer>().enabled == false)
+                        if (obj1.active == false)
                         {
                             start.GetComponent<MeshRenderer>().enabled = true;
-                            obj1.GetComponent<MeshRenderer>().enabled = true;
+                            obj1.SetActive(true);
                             a.c += 1;
                             obj.GetComponent<TextMeshPro>().text = a.c.ToString();
+                            l = Random.Range(1, 5);
+                            Pb.BarValue = Pb.BarValue - 10*l;
                         }
                     }
                 }
