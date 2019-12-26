@@ -11,12 +11,13 @@ public class adf : MonoBehaviour
     public GameObject start;
     public NewBehaviourScript a;
     public ProgressBar Pb;
-    int l;
+    public ProgressBar Pb1;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        a.br1=1;
         Pb.BarValue = 100;
     }
     void OnMouseDown()
@@ -25,21 +26,20 @@ public class adf : MonoBehaviour
         {
             start.GetComponent<MeshRenderer>().enabled = true;
             obj1.SetActive(true);
-            a.c += 1;
-            obj2.GetComponent<TextMeshPro>().text = a.c.ToString();
-            l = Random.Range(1, 5);
-            Pb.BarValue = Pb.BarValue - 10 * l;
+            Pb.BarValue = Pb.BarValue - 10 * a.br1;
+            a.br1 =a.br1+ 1;
+            a.br = 1;
         }
     }
     // Update is called once per frame
     void Update()
     {
-        if (a.c == 3)
+        if (Pb.BarValue == 0) 
         {
-            a.z = 0;
-            obj2.GetComponent<TextMeshPro>().text = a.z.ToString();
-            a.c = 0;
-            obj.GetComponent<TextMeshPro>().text = a.c.ToString();
+            a.br = 1;
+            a.br1 = 1;
+            Pb.BarValue = 100;
+            Pb1.BarValue = 100; ;
 
         }
         foreach (Touch touch in Input.touches)
@@ -56,10 +56,9 @@ public class adf : MonoBehaviour
                         {
                             start.GetComponent<MeshRenderer>().enabled = true;
                             obj1.SetActive(true);
-                            a.c += 1;
-                            obj.GetComponent<TextMeshPro>().text = a.c.ToString();
-                            l = Random.Range(1, 5);
-                            Pb.BarValue = Pb.BarValue - 10*l;
+                            Pb.BarValue = Pb.BarValue - 10 * a.br1;
+                            a.br1 = a.br1 + 1;
+                            a.br = 1;
                         }
                     }
                 }

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    public int br;
+    public int br1;
     public int z;
     public int c;
     public GameObject obj;
@@ -24,7 +26,7 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject obj19;
     public GameObject start;
     float Timer;
-    public int l;
+    int l;
     int a;
     int b;
     float f;
